@@ -1295,10 +1295,10 @@ export default function ScrollCanvas() {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-4 relative z-10">
-            Built to scale.
+            A complete team for clinical AI implementation.
           </h2>
           <p className="text-cyan-50/70 text-lg mb-16 max-w-2xl mx-auto relative z-10">
-            A multidisciplinary team combining computer science, biomedical engineering, medicine, business, and AI.
+            Combining software engineering, AI/ML, product design, clinical translation, and business strategy.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 relative z-10">
@@ -1327,7 +1327,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">Mateo</h3>
-                    <p className="text-cyan-500/80 text-xs tracking-widest uppercase font-semibold">Lead Fullstack Engineer</p>
+                    <p className="text-cyan-500/80 text-xs tracking-widest uppercase font-semibold mb-3">Software Engineering Lead</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Builds the core platform, clinician dashboard, and scalable software infrastructure.</p>
                   </div>
                 </div>
 
@@ -1345,7 +1346,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">Luis</h3>
-                    <p className="text-cyan-500/80 text-xs tracking-widest uppercase font-semibold">Product Strategy & UX</p>
+                    <p className="text-cyan-500/80 text-xs tracking-widest uppercase font-semibold mb-3">Product & UX Lead</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Turns technical features into intuitive workflows for patients and clinicians.</p>
                   </div>
                 </div>
               </div>
@@ -1375,7 +1377,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">Marco</h3>
-                    <p className="text-amber-500/80 text-xs tracking-widest uppercase font-semibold">Data Scientist & Business Strategy</p>
+                    <p className="text-amber-500/80 text-xs tracking-widest uppercase font-semibold mb-3">Data Analytics & Business Strategy</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Connects recovery metrics, market strategy, pricing, and business model development.</p>
                   </div>
                 </div>
 
@@ -1393,7 +1396,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">Álvaro</h3>
-                    <p className="text-amber-500/80 text-xs tracking-widest uppercase font-semibold">Lead ML & AI Engineer</p>
+                    <p className="text-amber-500/80 text-xs tracking-widest uppercase font-semibold mb-3">AI/ML Lead</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Develops the computer vision and machine learning systems behind movement analysis.</p>
                   </div>
                 </div>
               </div>
@@ -1424,7 +1428,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">Helene</h3>
-                    <p className="text-emerald-500/80 text-xs tracking-widest uppercase font-semibold">Biomedical Engineer · Clinical Translation</p>
+                    <p className="text-emerald-500/80 text-xs tracking-widest uppercase font-semibold mb-3">Team Lead & Clinical Translation</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Focus on clinical needs, rehabilitation workflows, and patient-centered validation.</p>
                   </div>
                 </div>
 
@@ -1442,7 +1447,8 @@ export default function ScrollCanvas() {
                       </div>
                     </div>
                     <h3 className="text-white font-bold text-xl tracking-tight mb-2 group-hover:text-cyan-300 transition-colors duration-300">José Antonio</h3>
-                    <p className="text-emerald-500/80 text-xs tracking-widest uppercase font-semibold">Physician & Clinical Advisor</p>
+                    <p className="text-emerald-500/80 text-xs tracking-widest uppercase font-semibold mb-3">Medical Advisor</p>
+                    <p className="text-white/60 text-sm leading-relaxed">Provides clinical guidance, medical relevance, and real-world healthcare validation.</p>
                   </div>
                 </div>
               </div>
