@@ -1384,137 +1384,7 @@ export default function ScrollCanvas() {
           </div>
         </div>
 
-        {/* Section: Investment & Ask */}
-        <div ref={(el) => { revealRefs.current[4] = el; }} className="reveal w-full max-w-[85rem] px-6 py-32 text-center border-b border-white/5 relative mx-auto">
-          {/* Tech Background Pattern */}
-          <div className="absolute inset-0 bg-radial-gradient from-cyan-900/5 via-transparent to-transparent pointer-events-none"></div>
-          
-          <div className="flex items-center justify-center gap-3 mb-6 relative z-10">
-            <div className="relative w-8 h-8 rounded-full border border-cyan-500/30 flex items-center justify-center">
-              <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"></div>
-            </div>
-            <span className="text-cyan-400 text-xs font-bold tracking-[0.2em] uppercase">THE ASK</span>
-          </div>
-
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 relative z-10 leading-tight">
-            We are raising <span className="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)]">$400,000</span>
-          </h2>
-          <p className="text-cyan-50/70 text-xl md:text-2xl mb-16 max-w-3xl mx-auto relative z-10 font-medium">
-            via SAFE at a $4M Cap to validate our technology and secure early adoption.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8 relative z-10 w-full text-left">
-            
-            {/* The Vehicle (Left Column) */}
-            <div className="flex flex-col gap-6">
-              <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
-                <div className="absolute top-0 right-0 p-8 opacity-10">
-                  <svg className="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <h3 className="text-white/60 text-sm font-bold tracking-[0.2em] uppercase mb-4">INSTRUMENT</h3>
-                <div className="text-4xl xl:text-5xl font-extrabold text-white mb-2 tracking-tighter">SAFE <span className="text-2xl xl:text-3xl text-white/50 font-medium tracking-normal">Note</span></div>
-                
-                <div className="w-full h-px bg-white/10 my-6"></div>
-                
-                <h3 className="text-white/60 text-sm font-bold tracking-[0.2em] uppercase mb-4">VALUATION CAP</h3>
-                <div className="text-4xl xl:text-5xl font-extrabold text-cyan-400 tracking-tighter drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">$1.5M</div>
-              </div>
-            </div>
-
-            {/* Use of Funds (Middle Column) */}
-            <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
-              <h3 className="text-cyan-400 text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></div>
-                USE OF FUNDS
-              </h3>
-              
-              <div className="relative flex flex-col gap-6 pl-6">
-                {/* Vertical Path Line */}
-                <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-linear-to-b from-cyan-400 via-cyan-500/50 to-cyan-800/20 rounded-full"></div>
-                
-                {/* $80K Engineering */}
-                <div className="relative">
-                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300"></div>
-                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$80,000</h4>
-                  <p className="text-white font-semibold text-sm mb-1">Engineering</p>
-                  <p className="text-white/50 text-xs leading-relaxed">Tooling, infrastructure, and specific technical contracts.</p>
-                </div>
-
-                {/* $120K Clinical */}
-                <div className="relative">
-                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-75"></div>
-                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$120,000</h4>
-                  <p className="text-white font-semibold text-sm mb-1">Clinical Validation</p>
-                  <p className="text-white/50 text-xs leading-relaxed">10 real post-stroke patients & Fugl-Meyer biomarker correlation.</p>
-                </div>
-
-                {/* $67K Legal & Reg */}
-                <div className="relative">
-                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-150"></div>
-                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$67,000</h4>
-                  <p className="text-white font-semibold text-sm mb-1">Legal & Regulatory</p>
-                  <p className="text-white/50 text-xs leading-relaxed">Prep for FDA SaMD pre-assessment.</p>
-                </div>
-
-                {/* $133K Ops */}
-                <div className="relative">
-                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-200"></div>
-                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$133,000</h4>
-                  <p className="text-white font-semibold text-sm mb-1">Operations</p>
-                  <p className="text-white/50 text-xs leading-relaxed">General operations and infrastructure.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Objectives (Right Column) */}
-            <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
-              <h3 className="text-cyan-400 text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></div>
-                OBJECTIVES (12-18 MO)
-              </h3>
-              
-              <div className="flex flex-col gap-6">
-                {/* Milestone 1 */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">10-Patient Pilot</h4>
-                    <p className="text-white/60 text-xs leading-relaxed">Execute a clinical pilot with 10 post-stroke patients to gather real-world usage data and adherence metrics.</p>
-                  </div>
-                </div>
-                
-                {/* Milestone 2 */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">Validate 14 Digital Metrics</h4>
-                    <p className="text-white/60 text-xs leading-relaxed">Establish the clinical reliability of our core kinematic and functional metrics against gold standards.</p>
-                  </div>
-                </div>
-
-                {/* Milestone 3 */}
-                <div className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">Close First LOI</h4>
-                    <p className="text-white/60 text-xs leading-relaxed">Secure the first formal commercial commitment (Letter of Intent) from a clinical institution.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div ref={(el) => { revealRefs.current[5] = el; }} className="reveal w-full max-w-6xl px-6 py-24 text-center border-b border-white/5">
+        <div ref={(el) => { revealRefs.current[4] = el; }} className="reveal w-full max-w-6xl px-6 py-24 text-center border-b border-white/5">
           <p className="text-cyan-400/80 uppercase tracking-[0.2em] text-xs font-bold mb-12">
             SUPPORTED BY INNOVATION LEADERS & TOP CLINICAL EXPERTS
           </p>
@@ -1564,6 +1434,136 @@ export default function ScrollCanvas() {
               <span className="text-xs md:text-sm text-emerald-400 font-semibold tracking-wider uppercase">
                 Clinical Support
               </span>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Section: Investment & Ask */}
+        <div ref={(el) => { revealRefs.current[5] = el; }} className="reveal w-full max-w-[85rem] px-6 py-32 text-center border-b border-white/5 relative mx-auto">
+          {/* Tech Background Pattern */}
+          <div className="absolute inset-0 bg-radial-gradient from-cyan-900/5 via-transparent to-transparent pointer-events-none"></div>
+
+          <div className="flex items-center justify-center gap-3 mb-6 relative z-10">
+            <div className="relative w-8 h-8 rounded-full border border-cyan-500/30 flex items-center justify-center">
+              <div className="w-2 h-2 bg-cyan-400 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.8)] animate-pulse"></div>
+            </div>
+            <span className="text-cyan-400 text-xs font-bold tracking-[0.2em] uppercase">THE ASK</span>
+          </div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 relative z-10 leading-tight">
+            We are raising <span className="text-cyan-400 drop-shadow-[0_0_15px_rgba(34,211,238,0.4)]">$400,000</span>
+          </h2>
+          <p className="text-cyan-50/70 text-xl md:text-2xl mb-16 max-w-3xl mx-auto relative z-10 font-medium">
+            via SAFE at a $4M Cap to validate our technology and secure early adoption.
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 xl:gap-8 relative z-10 w-full text-left">
+
+            {/* The Vehicle (Left Column) */}
+            <div className="flex flex-col gap-6">
+              <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
+                <div className="absolute top-0 right-0 p-8 opacity-10">
+                  <svg className="w-24 h-24 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-white/60 text-sm font-bold tracking-[0.2em] uppercase mb-4">INSTRUMENT</h3>
+                <div className="text-4xl xl:text-5xl font-extrabold text-white mb-2 tracking-tighter">SAFE <span className="text-2xl xl:text-3xl text-white/50 font-medium tracking-normal">Note</span></div>
+
+                <div className="w-full h-px bg-white/10 my-6"></div>
+
+                <h3 className="text-white/60 text-sm font-bold tracking-[0.2em] uppercase mb-4">VALUATION CAP</h3>
+                <div className="text-4xl xl:text-5xl font-extrabold text-cyan-400 tracking-tighter drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">$4M</div>
+              </div>
+            </div>
+
+            {/* Use of Funds (Middle Column) */}
+            <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
+              <h3 className="text-cyan-400 text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></div>
+                USE OF FUNDS
+              </h3>
+
+              <div className="relative flex flex-col gap-6 pl-6">
+                {/* Vertical Path Line */}
+                <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-linear-to-b from-cyan-400 via-cyan-500/50 to-cyan-800/20 rounded-full"></div>
+
+                {/* $80K Engineering */}
+                <div className="relative">
+                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300"></div>
+                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$80,000</h4>
+                  <p className="text-white font-semibold text-sm mb-1">Engineering</p>
+                  <p className="text-white/50 text-xs leading-relaxed">Tooling, infrastructure, and specific technical contracts.</p>
+                </div>
+
+                {/* $120K Clinical */}
+                <div className="relative">
+                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-75"></div>
+                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$120,000</h4>
+                  <p className="text-white font-semibold text-sm mb-1">Clinical Validation</p>
+                  <p className="text-white/50 text-xs leading-relaxed">10 real post-stroke patients & Fugl-Meyer biomarker correlation.</p>
+                </div>
+
+                {/* $67K Legal & Reg */}
+                <div className="relative">
+                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-150"></div>
+                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$67,000</h4>
+                  <p className="text-white font-semibold text-sm mb-1">Legal & Regulatory</p>
+                  <p className="text-white/50 text-xs leading-relaxed">Prep for FDA SaMD pre-assessment.</p>
+                </div>
+
+                {/* $133K Ops */}
+                <div className="relative">
+                  <div className="absolute -left-[29px] top-1.5 w-3 h-3 rounded-full bg-[#0a0a0a] border-2 border-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)] group-hover:bg-cyan-400/20 transition-colors duration-300 delay-200"></div>
+                  <h4 className="text-cyan-400 text-xl font-bold mb-1 tracking-tight">$133,000</h4>
+                  <p className="text-white font-semibold text-sm mb-1">Operations</p>
+                  <p className="text-white/50 text-xs leading-relaxed">General operations and infrastructure.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Objectives (Right Column) */}
+            <div className="bg-[#0a0a0a] border border-white/10 rounded-[32px] p-8 xl:p-10 relative overflow-hidden group hover:border-cyan-500/30 transition-colors duration-500 shadow-2xl h-full flex flex-col justify-center">
+              <h3 className="text-cyan-400 text-sm font-bold tracking-[0.2em] uppercase mb-8 flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.8)]"></div>
+                OBJECTIVES (12-18 MO)
+              </h3>
+
+              <div className="flex flex-col gap-6">
+                {/* Milestone 1 */}
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
+                    1
+                  </div>
+                  <div>
+                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">10-Patient Pilot</h4>
+                    <p className="text-white/60 text-xs leading-relaxed">Execute a clinical pilot with 10 post-stroke patients to gather real-world usage data and adherence metrics.</p>
+                  </div>
+                </div>
+
+                {/* Milestone 2 */}
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
+                    2
+                  </div>
+                  <div>
+                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">Validate 14 Digital Metrics</h4>
+                    <p className="text-white/60 text-xs leading-relaxed">Establish the clinical reliability of our core kinematic and functional metrics against gold standards.</p>
+                  </div>
+                </div>
+
+                {/* Milestone 3 */}
+                <div className="flex gap-4 items-start">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 font-bold text-base group-hover:border-cyan-500/30 transition-colors">
+                    3
+                  </div>
+                  <div>
+                    <h4 className="text-white text-lg font-bold mb-1 leading-tight">Close First LOI</h4>
+                    <p className="text-white/60 text-xs leading-relaxed">Secure the first formal commercial commitment (Letter of Intent) from a clinical institution.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
           </div>
