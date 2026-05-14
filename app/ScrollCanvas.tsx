@@ -118,7 +118,7 @@ export default function ScrollCanvas() {
   const deviceBadgeRef = useRef<HTMLDivElement | null>(null);
   const neuralDashRef = useRef<HTMLDivElement | null>(null);
   const neuralDashBigRef = useRef<HTMLDivElement | null>(null);
-  const sanitasBadgeRef = useRef<HTMLDivElement | null>(null);
+  const bupaBadgeRef = useRef<HTMLDivElement | null>(null);
   const saturnoBadgeRef = useRef<HTMLDivElement | null>(null);
   const counterStartTimeRef = useRef<number | null>(null);
   const lastHUDUpdateRef = useRef<number>(0);
@@ -353,10 +353,10 @@ export default function ScrollCanvas() {
         cvMetricsHud.style.transform = `translateY(${hudTransformY}px)`;
       }
 
-      const sanitasBadge = sanitasBadgeRef.current;
-      if (sanitasBadge) {
-        sanitasBadge.style.opacity = String(hudOpacity);
-        sanitasBadge.style.transform = `translateY(${hudTransformY}px)`;
+      const bupaBadge = bupaBadgeRef.current;
+      if (bupaBadge) {
+        bupaBadge.style.opacity = String(hudOpacity);
+        bupaBadge.style.transform = `translateY(${hudTransformY}px)`;
       }
 
       // Device Badge: frames 565-720 (game section - computer visible)
@@ -788,10 +788,10 @@ export default function ScrollCanvas() {
         </div>
       )}
 
-      {/* Sanitas Badge - Section 5 */}
+      {/* Bupa Badge - Section 5 */}
       {loaded && (
         <div
-          ref={sanitasBadgeRef}
+          ref={bupaBadgeRef}
           style={{
             position: "fixed",
             top: "5%",
@@ -801,7 +801,7 @@ export default function ScrollCanvas() {
             zIndex: 30,
           }}
         >
-          <SupporterBadge logo="/sanitas.png" text="Clinical Reliability by Sanitas" borderClass="hover:border-emerald-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]" />
+          <SupporterBadge logo="/Bupa.jpeg" text="Clinical Reliability by Bupa" borderClass="hover:border-emerald-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]" />
         </div>
       )}
 
@@ -1461,12 +1461,12 @@ export default function ScrollCanvas() {
             
             {/* Top Row: 3 Items */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
-              {/* Sanitas */}
+              {/* Bupa */}
               <div className="flex flex-col items-center justify-center p-10 md:p-12 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-emerald-500/40 transition-all duration-500 group">
                 <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
-                  <img src="/sanitas.png" alt="Sanitas" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                  <img src="/Bupa.jpeg" alt="Bupa" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
                 </div>
-                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">Sanitas</h4>
+                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">Bupa</h4>
                 <span className="inline-block mt-1 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-sm md:text-base text-emerald-400 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(16,185,129,0.15)] group-hover:bg-emerald-500/20 transition-colors">Clinical Support</span>
               </div>
 
