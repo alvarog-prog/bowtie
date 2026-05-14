@@ -96,11 +96,11 @@ function getSectionTransform(
 }
 
 const SupporterBadge = ({ logo, text, borderClass, shadowClass }: { logo: string, text: string, borderClass: string, shadowClass: string }) => (
-  <div className={`backdrop-blur-md bg-white/[0.03] border border-white/10 rounded-full pl-2 pr-4 py-1.5 flex items-center gap-3 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:bg-white/[0.05] ${borderClass} transition-all duration-300 group pointer-events-auto cursor-pointer`}>
-    <div className={`w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/20 ${shadowClass} transition-all`}>
-      <img src={logo} alt="Partner" className="w-5 h-auto object-contain" />
+  <div className={`backdrop-blur-md bg-white/[0.05] border-2 border-white/15 rounded-full pl-4 pr-7 py-3.5 flex items-center gap-4 shadow-[0_0_25px_rgba(0,0,0,0.7)] hover:bg-white/[0.1] ${borderClass} transition-all duration-300 group pointer-events-auto cursor-pointer`}>
+    <div className={`w-14 h-14 rounded-full bg-white flex items-center justify-center overflow-hidden border-2 border-white/30 ${shadowClass} transition-all`}>
+      <img src={logo} alt="Partner" className="w-9 h-auto object-contain" />
     </div>
-    <p className="text-white/80 text-[10px] sm:text-xs font-semibold tracking-wide uppercase">{text}</p>
+    <p className="text-white/90 text-sm md:text-base font-bold tracking-wide uppercase">{text}</p>
   </div>
 );
 
