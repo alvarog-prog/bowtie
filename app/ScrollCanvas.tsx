@@ -95,6 +95,15 @@ function getSectionTransform(
   return 0;
 }
 
+const SupporterBadge = ({ logo, text, borderClass, shadowClass }: { logo: string, text: string, borderClass: string, shadowClass: string }) => (
+  <div className={`backdrop-blur-md bg-white/[0.03] border border-white/10 rounded-full pl-2 pr-4 py-1.5 flex items-center gap-3 shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:bg-white/[0.05] ${borderClass} transition-all duration-300 group pointer-events-auto cursor-pointer`}>
+    <div className={`w-8 h-8 rounded-full bg-white flex items-center justify-center overflow-hidden border border-white/20 ${shadowClass} transition-all`}>
+      <img src={logo} alt="Partner" className="w-5 h-auto object-contain" />
+    </div>
+    <p className="text-white/80 text-[10px] sm:text-xs font-semibold tracking-wide uppercase">{text}</p>
+  </div>
+);
+
 export default function ScrollCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const framesRef = useRef<HTMLImageElement[]>([]);
@@ -109,6 +118,8 @@ export default function ScrollCanvas() {
   const deviceBadgeRef = useRef<HTMLDivElement | null>(null);
   const neuralDashRef = useRef<HTMLDivElement | null>(null);
   const neuralDashBigRef = useRef<HTMLDivElement | null>(null);
+  const sanitasBadgeRef = useRef<HTMLDivElement | null>(null);
+  const saturnoBadgeRef = useRef<HTMLDivElement | null>(null);
   const counterStartTimeRef = useRef<number | null>(null);
   const lastHUDUpdateRef = useRef<number>(0);
   const srtRef = useRef<HTMLSpanElement>(null);
@@ -342,6 +353,12 @@ export default function ScrollCanvas() {
         cvMetricsHud.style.transform = `translateY(${hudTransformY}px)`;
       }
 
+      const sanitasBadge = sanitasBadgeRef.current;
+      if (sanitasBadge) {
+        sanitasBadge.style.opacity = String(hudOpacity);
+        sanitasBadge.style.transform = `translateY(${hudTransformY}px)`;
+      }
+
       // Device Badge: frames 565-720 (game section - computer visible)
       const deviceSection = { startFrame: 565, endFrame: 720 };
       const deviceOpacity = getSectionOpacity(progress, deviceSection);
@@ -350,6 +367,12 @@ export default function ScrollCanvas() {
       if (deviceBadge) {
         deviceBadge.style.opacity = String(deviceOpacity);
         deviceBadge.style.transform = `translateY(${deviceTransformY}px)`;
+      }
+
+      const saturnoBadge = saturnoBadgeRef.current;
+      if (saturnoBadge) {
+        saturnoBadge.style.opacity = String(deviceOpacity);
+        saturnoBadge.style.transform = `translateY(${deviceTransformY}px)`;
       }
 
       // Neural Dashboard Small: frames 565-720 (same as device section)
@@ -765,6 +788,23 @@ export default function ScrollCanvas() {
         </div>
       )}
 
+      {/* Sanitas Badge - Section 5 */}
+      {loaded && (
+        <div
+          ref={sanitasBadgeRef}
+          style={{
+            position: "fixed",
+            top: "5%",
+            right: "3%",
+            opacity: 0,
+            pointerEvents: "none",
+            zIndex: 30,
+          }}
+        >
+          <SupporterBadge logo="/sanitas.png" text="Clinical Reliability by Sanitas" borderClass="hover:border-emerald-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]" />
+        </div>
+      )}
+
       {/* Device Compatibility Badges - Section 6 (Game Section) */}
       {loaded && (
         <div
@@ -809,6 +849,23 @@ export default function ScrollCanvas() {
               <p className="text-cyan-300/90 text-xs font-semibold tracking-wide">No wearables needed</p>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Saturno Labs Badge - Section 6 */}
+      {loaded && (
+        <div
+          ref={saturnoBadgeRef}
+          style={{
+            position: "fixed",
+            top: "5%",
+            right: "3%",
+            opacity: 0,
+            pointerEvents: "none",
+            zIndex: 30,
+          }}
+        >
+          <SupporterBadge logo="/saturno.png" text="Gamified UI & UX by Saturno Labs" borderClass="hover:border-cyan-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]" />
         </div>
       )}
 
@@ -995,7 +1052,12 @@ export default function ScrollCanvas() {
                 transform: `scale(${businessCardProgress < 0.35 ? 0.97 : businessCardProgress < 0.4 ? 0.97 + ((businessCardProgress - 0.35) / 0.05) * 0.03 : 1})`
               }}
             >
-              <div className="w-full max-w-[100rem] mx-auto relative min-h-[700px] grid grid-cols-1 lg:grid-cols-12 items-center px-4 md:px-12">
+              {/* AWS Badge - B2B SaaS Model */}
+              <div className="absolute top-10 right-10 md:top-16 md:right-16 z-50">
+                <SupporterBadge logo="/aws.png" text="Cloud Backend by AWS" borderClass="border-cyan-500/20 hover:border-cyan-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(34,211,238,0.4)]" />
+              </div>
+
+              <div className="w-full max-w-[100rem] mx-auto relative min-h-[700px] grid grid-cols-1 lg:grid-cols-12 items-center px-4 md:px-12 pt-20 md:pt-0">
                 
                 {/* Left Side: Title and Bowtie */}
                 <div className="lg:col-span-8 xl:col-span-8 flex flex-col justify-center pr-0 lg:pr-8">
@@ -1218,6 +1280,11 @@ export default function ScrollCanvas() {
         </div>
 
         <div ref={(el) => { revealRefs.current[3] = el; }} className="reveal w-full max-w-6xl px-6 py-32 text-center border-b border-white/5 relative">
+          {/* Harvard RCC Badge */}
+          <div className="absolute top-10 right-10 z-50">
+            <SupporterBadge logo="/rcc.png" text="Business Strategy by Harvard RCC" borderClass="border-amber-500/20 hover:border-amber-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(251,191,36,0.4)]" />
+          </div>
+
           {/* Tech Background Pattern with Radial Gradient */}
           <div className="absolute inset-0 bg-radial-gradient from-cyan-900/10 via-transparent to-transparent pointer-events-none"></div>
           <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -1389,51 +1456,62 @@ export default function ScrollCanvas() {
             SUPPORTED BY INNOVATION LEADERS & TOP CLINICAL EXPERTS
           </p>
 
-          {/* 2x2 Grid Layout for Maximum Prominence */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto">
-
-            {/* Partner 1: Harvard RCC */}
-            <div className="flex flex-col items-center justify-center p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-cyan-500/40 transition-all duration-500 group">
-              <div className="h-24 w-full flex items-center justify-center mb-6">
-                <img src="/rcc.png" alt="Harvard RCC" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+          {/* Pillar Layout: 3 Top, 2 Bottom */}
+          <div className="flex flex-col gap-6 md:gap-8 mt-16 max-w-6xl mx-auto items-center relative z-10">
+            
+            {/* Top Row: 3 Items */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full">
+              {/* Sanitas */}
+              <div className="flex flex-col items-center justify-center p-10 md:p-12 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-emerald-500/40 transition-all duration-500 group">
+                <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
+                  <img src="/sanitas.png" alt="Sanitas" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">Sanitas</h4>
+                <span className="inline-block mt-1 px-5 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-sm md:text-base text-emerald-400 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(16,185,129,0.15)] group-hover:bg-emerald-500/20 transition-colors">Clinical Support</span>
               </div>
-              <h4 className="text-white font-semibold text-base text-center mb-2">Real Colegio Complutense de Harvard</h4>
-              <span className="text-xs md:text-sm text-amber-400 font-semibold tracking-wider uppercase">
-                Entrepreneurship Support
-              </span>
+
+              {/* Harvard */}
+              <div className="flex flex-col items-center justify-center p-12 md:p-14 border border-amber-500/30 rounded-2xl bg-[#0a0a0a] hover:border-amber-500/60 shadow-[0_0_30px_rgba(251,191,36,0.1)] hover:shadow-[0_0_40px_rgba(251,191,36,0.2)] transition-all duration-500 group relative">
+                {/* Subtle top accent for hierarchy */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-amber-500/40 rounded-b-md"></div>
+                <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
+                  <img src="/rcc.png" alt="Harvard RCC" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <h4 className="text-white font-bold text-lg md:text-xl text-center mb-3">Real Colegio Complutense de Harvard</h4>
+                <span className="inline-block mt-1 px-5 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-sm md:text-base text-amber-400 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(245,158,11,0.15)] group-hover:bg-amber-500/20 transition-colors">Entrepreneurship Support</span>
+              </div>
+
+              {/* AWS */}
+              <div className="flex flex-col items-center justify-center p-10 md:p-12 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-cyan-500/40 transition-all duration-500 group">
+                <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
+                  <img src="/aws.png" alt="AWS Spain" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">AWS Spain</h4>
+                <span className="inline-block mt-1 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-sm md:text-base text-cyan-400 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:bg-cyan-500/20 transition-colors">Technical Support</span>
+              </div>
             </div>
 
-            {/* Partner 2: AWS */}
-            <div className="flex flex-col items-center justify-center p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-cyan-500/40 transition-all duration-500 group">
-              <div className="h-24 w-full flex items-center justify-center mb-6">
-                <img src="/aws.png" alt="AWS Spain" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+            {/* Bottom Row: 2 Items */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full md:w-2/3">
+              {/* Saturno */}
+              <div className="flex flex-col items-center justify-center p-10 md:p-12 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-cyan-500/40 transition-all duration-500 group">
+                <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
+                  <img src="/saturno.png" alt="Saturno Labs" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                </div>
+                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">Saturno Labs</h4>
+                <span className="inline-block mt-1 px-5 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-sm md:text-base text-cyan-400 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(6,182,212,0.15)] group-hover:bg-cyan-500/20 transition-colors">Technical Support</span>
               </div>
-              <h4 className="text-white font-semibold text-base text-center mb-2">AWS Spain</h4>
-              <span className="text-xs md:text-sm text-cyan-400 font-semibold tracking-wider uppercase">
-                Technical Support
-              </span>
-            </div>
 
-            {/* Partner 3: Saturno Labs */}
-            <div className="flex flex-col items-center justify-center p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-cyan-500/40 transition-all duration-500 group">
-              <div className="h-24 w-full flex items-center justify-center mb-6">
-                <img src="/saturno.png" alt="Saturno Labs" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+              {/* Oakley */}
+              <div className="flex flex-col items-center justify-center p-10 md:p-12 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-orange-500/40 transition-all duration-500 group">
+                <div className="h-28 md:h-32 w-full flex items-center justify-center mb-6">
+                  <div className="bg-white/95 px-6 py-3 rounded-xl h-full flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-shadow">
+                    <img src="/oakley.png" alt="Oakley Capital" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                </div>
+                <h4 className="text-white font-semibold text-lg md:text-xl text-center mb-3">Oakley Capital</h4>
+                <span className="inline-block mt-1 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-sm md:text-base text-orange-500 font-extrabold tracking-widest uppercase shadow-[0_0_15px_rgba(249,115,22,0.15)] group-hover:bg-orange-500/20 transition-colors">Funding & Strategy</span>
               </div>
-              <h4 className="text-white font-semibold text-base text-center mb-2">Saturno Labs</h4>
-              <span className="text-xs md:text-sm text-cyan-400 font-semibold tracking-wider uppercase">
-                Technical Support
-              </span>
-            </div>
-
-            {/* Partner 4: Sanitas (NEW) */}
-            <div className="flex flex-col items-center justify-center p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/8 hover:border-emerald-500/40 transition-all duration-500 group">
-              <div className="h-24 w-full flex items-center justify-center mb-6">
-                <img src="/sanitas.png" alt="Sanitas" className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300" />
-              </div>
-              <h4 className="text-white font-semibold text-base text-center mb-2">Sanitas</h4>
-              <span className="text-xs md:text-sm text-emerald-400 font-semibold tracking-wider uppercase">
-                Clinical Support
-              </span>
             </div>
 
           </div>
@@ -1441,6 +1519,11 @@ export default function ScrollCanvas() {
 
         {/* Section: Investment & Ask */}
         <div ref={(el) => { revealRefs.current[5] = el; }} className="reveal w-full max-w-[85rem] px-6 py-32 text-center border-b border-white/5 relative mx-auto">
+          {/* Oakley Capital Badge */}
+          <div className="absolute top-10 right-10 z-50">
+            <SupporterBadge logo="/oakley.png" text="Funding Strategy by Oakley Capital" borderClass="border-orange-500/20 hover:border-orange-500/40" shadowClass="group-hover:shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
+          </div>
+
           {/* Tech Background Pattern */}
           <div className="absolute inset-0 bg-radial-gradient from-cyan-900/5 via-transparent to-transparent pointer-events-none"></div>
 
